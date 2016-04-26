@@ -23,6 +23,7 @@ class ScratchPlayer(ProtoPlayer):
 
 
     def determine_action(self,upcard):
+
         if upcard in ['2','3','4','5,','6']:
             if self.total_in_hand >= 13:
                 return 'stand'
@@ -39,20 +40,16 @@ class ScratchPlayer(ProtoPlayer):
         upcard = self.dealer_state(current_table)
         my_hand = current_hand.cards
         scores=  current_hand.possible_scores()
-
-        int_hand = []
-        for item in my_hand:
-            get_int = self.identify_card_values(item)
-            int_hand.append(get_int)
-        self.total_in_hand = sum(int_hand)
+        self.total_in_hand = current_hand.best_score()
 
         action = self.determine_action(upcard)
         return action
 
     def bet(self, current_funds, minimum_bet, maximum_bet):
-        if self.total_in_hand in [19,20,21]:
+        if self.total_in_hand == 21:
             return maximum_bet
         else:
             return minimum_bet
+
 
 
