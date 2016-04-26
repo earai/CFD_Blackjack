@@ -31,3 +31,4 @@ game.dealer_play_hand()
 game.settle_bets()
 game.final_look_at_table()
 
+print game.final_look_at_table()
