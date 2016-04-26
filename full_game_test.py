@@ -8,7 +8,7 @@ from players.test_player import ScratchPlayer
 
 player1 = bj_player.ProtoPlayer(name='Steve')
 #player2 = bj_player.ProtoPlayer(name='Jenny')
-player2 = ScratchPlayer(name='erin')
+player2 = ScratchPlayer(name='erin',)
 player3 = bj_player.DealerRulesPlayer(name='David')
 player4 = bj_player.DealerRulesPlayer(name='Lauren')
 player_list = [player1, player2, player3, player4]
